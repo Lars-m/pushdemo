@@ -17,10 +17,11 @@ app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
   next();
 })
-app.use((req,res,next)=>{
- console.log(req.url);
-  next();
-})
+
+// app.use((req,res,next)=>{
+//  console.log(req.url);
+//   next();
+// })
 
 app.post("/subscribe",(req,res)=>{
   const sub = req.body;
