@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Push Server Client</title>
+    <link rel="manifest" href="/manifest.json">
+    <title>Push Server Demo Client</title>
     <style media="screen">
       body {
         font-family: 'Lato', sans-serif;
@@ -21,6 +22,10 @@
       #unsubscribe button {
         background: #EB3F2F;
       }
+      #serviceworker-not-supported h2 {
+        color:red;
+        margin-top: 2em;
+      }
       .hidden {
         display: none;
       }
@@ -35,6 +40,9 @@
     <div id="unsubscribe" class="hidden">
       <p><i>Unsubscribe from Push Notifications</i></p>
       <button onclick="unsubscribe()">Unsubscribe</button>
+    </div>
+    <div id="serviceworker-not-supported" class="hidden">
+      <h2><i>We are sorry, but your browser does not support features on this site!</i></h2>
     </div>
 
     <script src="main.js"></script>

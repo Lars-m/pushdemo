@@ -17,14 +17,20 @@ const setSubscribedStatus = isSubscribed => {
 };
 
 // Register Service Worker
-navigator.serviceWorker
-  .register("sw.js")
-  .then(registration => {
-    console.log(registration);
-    swReg = registration; // Reference registration globally
-    swReg.pushManager.getSubscription().then(setSubscribedStatus);
-  })
-  .catch(console.error);
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js",{scope:"."})
+    .then(registration => {
+      console.log(registration);
+      swReg = registration; // Reference registration globally
+      swReg.pushManager.getSubscription().then(setSubscribedStatus);
+    })
+    .catch(console.error);
+} else{
+  document.getElementById("unsubscribe").className = "hidden";
+  document.getElementById("subscribe").className = "hidden";
+  document.getElementById("serviceworker-not-supported").className = "";
+}
 
 /* function taken from here:
 https://www.npmjs.com/package/web-push#using-vapid-key-for-applicationserverkey
