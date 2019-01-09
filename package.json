@@ -4,8 +4,8 @@
   "description": "Web Push Server",
   "main": "server/index.js",
   "scripts": {
-    "start": "nodemon server/",
-    "vapid": "./node_modules/web-push/src/generateVAPIDKeys",
+    "start": "node server/",
+    "develop": "nodemon server/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

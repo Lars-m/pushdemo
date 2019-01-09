@@ -5,8 +5,8 @@ const push = require('./push')
 const bodyParser = require('body-parser');
 
 const app = express();
-console.log("DIRNAME; ",__dirname)
-console.log("DIR; ",path.join(__dirname,"../client"))
+// console.log("DIRNAME; ",__dirname)
+// console.log("DIR; ",path.join(__dirname,"../client"))
 app.use(express.static(path.join(__dirname,"../client")))
 
 app.use(bodyParser.json())
